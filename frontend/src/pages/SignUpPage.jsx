@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useAuthStore } from "../store/useAuthStore";
+import {AuthImagePattern} from '../components/AuthImagePattern.jsx'
 
 const SignUpPage = () => {
   const [showPassword, setShowPassword] = useState(false)
