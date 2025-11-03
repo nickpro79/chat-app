@@ -40,7 +40,7 @@ export const sendMessage = async (req, res) => {
 
     let imageUrl;
 
-    if (imageUrl) {
+    if (image) {
       const uploadResponse = await cloudinary.uploader.upload(image);
       imageUrl = uploadResponse.secure_url;
     }
@@ -59,7 +59,7 @@ export const sendMessage = async (req, res) => {
       io.to(receiverSocketId).emit("newMessage", newMessage);
     }
 
-    res.status(201).json({ newMessage });
+    res.status(201).json(newMessage);
   } catch (error) {
     console.log("Error in sendMessage:", error);
     res.status(500).json({ message: "Internal Server Error" });
