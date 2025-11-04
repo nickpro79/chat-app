@@ -103,3 +103,24 @@ Server issues a JWT token stored in HTTP-only cookies
 Protected routes check for valid tokens via middleware
 
 Logout clears the cookie safely
+
+## 📸 Screenshots
+
+### 🏠 Home Page
+![Home Page](./assets/Home%20Page.png)
+
+### 🔑 Login Page
+![Login Page](./assets/Login%20Page.png)
+
+### 📝 Sign Up Page
+![Sign Up Page](./assets/Sign%20Up%20Page.png)
+
+### 💬 Chat Sample
+![Chat Sample](./assets/Chat%20Sample.png)
+
+### 👤 Profile Page
+![Profile Page](./assets/Profile%20Page.png)
+
+### ⚙️ Settings Page
+![Settings Page](./assets/Settings%20Page.png)
+
