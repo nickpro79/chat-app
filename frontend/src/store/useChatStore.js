@@ -47,19 +47,23 @@ export const useChatStore = create((set, get) => ({
     }
   },
   subscribeToMessages: () => {
-    const { selectedUser } = get();
-    if (!selectedUser) return;
-
     const socket = useAuthStore.getState().socket;
+    if (!socket) return;
+
+    socket.off("newMessage"); // prevent duplicate listeners
 
     socket.on("newMessage", (newMessage) => {
-      const isMessageSentFromSelectedUser =
-        newMessage.senderId === selectedUser._id;
-      if (!isMessageSentFromSelectedUser) return;
+      const { selectedUser, messages } = get();
 
-      set({
-        messages: [...get().messages, newMessage],
-      });
+      // if currently chatting with sender, append message
+      if (selectedUser && newMessage.senderId === selectedUser._id) {
+        set({ messages: [...messages, newMessage] });
+      }
+
+      // optional: handle unread messages or show toast
+      // if (!selectedUser || newMessage.senderId !== selectedUser._id) {
+      //   toast(`New message from ${newMessage.senderName}`);
+      // }
     });
   },
 

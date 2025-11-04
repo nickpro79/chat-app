@@ -54,14 +54,22 @@ export const sendMessage = async (req, res) => {
 
     await newMessage.save();
 
+    // ✅ Send the message to the receiver in real-time (if online)
     const receiverSocketId = getReceiverSocketId(receiverId);
     if (receiverSocketId) {
       io.to(receiverSocketId).emit("newMessage", newMessage);
     }
 
+    // ✅ Also send it to the sender’s socket (so both sides get it live)
+    const senderSocketId = getReceiverSocketId(senderId);
+    if (senderSocketId) {
+      io.to(senderSocketId).emit("newMessage", newMessage);
+    }
+
+    // ✅ Return message as response (for safety)
     res.status(201).json(newMessage);
   } catch (error) {
-    console.log("Error in sendMessage:", error);
+    console.error("Error in sendMessage:", error);
     res.status(500).json({ message: "Internal Server Error" });
   }
 };
