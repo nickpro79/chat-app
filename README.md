@@ -86,7 +86,7 @@ Copy code
 node src/seeds/user.seed.js
 This will clear existing users and create new demo accounts with hashed passwords and profile pictures.
 
-💬 Real-Time Communication
+## 💬 Real-Time Communication
 The app uses Socket.IO for instant message delivery:
 
 Users connect via their user ID
@@ -95,7 +95,7 @@ Online users are tracked in memory
 
 When one user sends a message, it instantly appears for the receiver
 
-🔒 Authentication Flow
+## 🔒 Authentication Flow
 User registers or logs in
 
 Server issues a JWT token stored in HTTP-only cookies
