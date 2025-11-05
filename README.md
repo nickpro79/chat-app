@@ -2,6 +2,8 @@
 
 A modern real-time chat application built with **MongoDB**, **Express**, **React**, and **Node.js**, featuring **JWT authentication**, **Socket.IO** for live messaging, and **Cloudinary** image uploads.
 
+🌐 **Live Demo:** [View Deployed App](https://chat-app-eyto.onrender.com)
+
 ---
 
 ## 🚀 Features
