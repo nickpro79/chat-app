@@ -41,13 +41,13 @@ A modern real-time chat application built with **MongoDB**, **Express**, **React
 
 ### 1️⃣ Clone the Repository
 
-git clone https://github.com/yourusername/chat-app.git
-cd chat-app
+- git clone https://github.com/yourusername/chat-app.git
+- cd chat-app
 ### 2️⃣ Backend Setup
 bash
 Copy code
-cd backend
-npm install
+- cd backend
+- npm install
 
 Create a .env file inside /backend:
 
@@ -60,16 +60,17 @@ CLOUDINARY_CLOUD_NAME=your_cloudinary_name
 CLOUDINARY_API_KEY=your_cloudinary_api_key
 CLOUDINARY_API_SECRET=your_cloudinary_api_secret
 NODE_ENV=development
-Run the backend:
 
+Run the backend:
 bash
 Copy code
-npm run dev
+- npm run dev
 ### 3️⃣ Frontend Setup
 bash
 Copy code
-cd ../frontend
-npm install
+- cd ../frontend
+- npm install
+
 Create a .env file inside /frontend:
 
 env
